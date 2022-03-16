@@ -5,7 +5,8 @@ function AddForm(props) {
     const [name, setName] = useState('');
     const [place, setPlace] = useState('');
     const [days, setDays] = useState('')
-
+    const storedToken = localStorage.getItem('authToken')
+    
     const handleSubmit = (e) => {
         e.preventDefault();
         
@@ -13,7 +14,9 @@ function AddForm(props) {
       const body = { name, place, days };
       console.log('yellow')
       axios
-      .post(`${process.env.REACT_APP_API_URL}/trip`, body)
+      .post(`${process.env.REACT_APP_API_URL}/trip`, body, {
+        headers: { Authorization: `Bearer ${storedToken}` }
+      })
       .then((response) => {
         setName('');
         setPlace('');

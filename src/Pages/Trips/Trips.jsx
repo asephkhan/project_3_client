@@ -3,14 +3,16 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'; 
 import AddForm from '../../Components/AddForm/AddForm';
 
-
 function Trips() {
 const [trips, setTrips] = useState([]);
+const storedToken = localStorage.getItem('authToken')
 
 const fetchTrips = async () => {
   try {
 
-    let response = await axios.get(`${process.env.REACT_APP_API_URL}/trip`,);
+    let response = await axios.get(`${process.env.REACT_APP_API_URL}/trip`,{
+      headers: { Authorization: `Bearer ${storedToken}` }
+    });
     setTrips(response.data);
     console.log(response.data)
   } catch (error) {
