@@ -28,7 +28,7 @@ function Pages() {
         /> 
 
         <Route
-          path="/trips/:trip"
+          path="/trips/:tripId"
           element={
             <IsPrivate>
               <TripDetails/>
