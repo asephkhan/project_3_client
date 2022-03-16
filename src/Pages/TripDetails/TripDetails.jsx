@@ -34,16 +34,7 @@ function TripDetails() {
           <p>{trip.days}</p> 
         </>
       )}
-    {/*   
-      {trip &&
-        trip.map((triparr) => (
-          <li key={trip._id}>
-            <h3>{triparr.place}</h3>
-            <p>{triparr.name}</p>
-            <p>{triparr.days}</p>
-          </li>
-        ))}
- */}
+   
 
       {trip && <Link to={`/trips/edit/${trip._id}`}>Edit Trip</Link>} 
       <Link to="/trips"> Back to trips</Link>
