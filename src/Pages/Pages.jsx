@@ -6,7 +6,9 @@ import { Routes, Route } from "react-router-dom";
 import IsAnon from "../Components/IsAnon/IsAnnon";
 import AllFlights from "../Components/AllFlights/AllFlights";
 import IsPrivate from "../Components/IsPrivate/IsPrivate";
-import FlightDetails from "./FlightDetails/FlightDetails";
+import EditTrip from "./EditTrip/EditTrip";
+import Trips from "./Trips/Trips";
+import TripDetails from "./TripDetails/TripDetails";
 function Pages() {
   return (
     <div>
@@ -16,22 +18,26 @@ function Pages() {
         <Route path="/" element={<Home />} />
         <Route path='/flights' element={<AllFlights />} />
 
-        <Route
-          path="/flights"
-          element={
-            <IsPrivate>
-              <AllFlights/>
-            </IsPrivate>
-          }
-        />
          <Route
-          path="/flights/:flightId"
+          path="/trips"
           element={
             <IsPrivate>
-              <FlightDetails/>
+              <Trips/>
             </IsPrivate>
           }
-        />
+        /> 
+
+        <Route
+          path="/trips/:trip"
+          element={
+            <IsPrivate>
+              <TripDetails/>
+            </IsPrivate>
+          }
+        /> 
+
+<Route path="/trips/edit/:tripId" element={<EditTrip />} />
+
         <Route path="/signup"element={
             <IsAnon>
               <SignupPage />
