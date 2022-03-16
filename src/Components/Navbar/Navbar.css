@@ -1,0 +1,50 @@
+
+
+.Navbar {
+   position: relative;
+    width: 100vw;
+  height: 10vh;
+  background: #0a788b ;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  
+}
+
+.NavbarLinks{
+    text-decoration: none;
+    color: #ffff;
+    padding: 15px;
+
+
+}
+
+.NavbarLinks:hover{
+color: white;
+text-decoration: underline;
+}
+
+button{
+    background-color: white;
+    border: none;
+   padding: 5px 15px;
+}
+
+.user-div{
+    display: flex;
+    width: 3rem;
+    align-items: center;
+
+}
+
+.user-div h3{
+    color: white;
+    font-size: 18px;
+    margin-right: 20px;
+    margin-bottom: 0;
+}
+
+
+
+
