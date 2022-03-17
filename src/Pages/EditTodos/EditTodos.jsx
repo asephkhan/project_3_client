@@ -9,7 +9,7 @@ function EditTodos() {
   
     const navigate = useNavigate();
   
-    const deleteTodos = () => {
+    const deleteTodos = (todoId) => {
       axios
         .delete(`${process.env.REACT_APP_API_URL}/thingsTodo/${todoId}`)
         .then(() => navigate('/TripDetails'));

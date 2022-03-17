@@ -28,8 +28,7 @@ function AddForm(props) {
     }
   return (
     <div>
-    <h2> Add Trip </h2>
-
+<h3>Add a trip </h3>
 <form onSubmit={handleSubmit}>
 
  <label htmlFor="name">Name</label>

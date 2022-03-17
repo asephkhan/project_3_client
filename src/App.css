@@ -42,8 +42,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  color: rgb(14, 98, 138);
+  background-color: lightblue;
   color: white;
-  background-image: url('https://images.unsplash.com/photo-1605816246254-851765f431b0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=775&q=80');
 background-size: cover;
 background-repeat: no-repeat;
 
@@ -76,4 +77,23 @@ form button{
   background-color: #0a788b;
   color: white;
   margin-top: 10px;
+}
+
+
+.trip-container{
+  border: solid 3px #ffff;
+  width: 25vw;
+  font-size: 20px;
+  background-color: #0a788b;
+  border-radius: 15px;
+
+}
+.trip-container p{
+  text-decoration: none;
+  color: #ffff;
+}
+
+.trip-name-link{
+  text-decoration: none;
+  color:#ffff
 }

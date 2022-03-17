@@ -44,6 +44,11 @@ function TripDetails() {
       console.log(error);
     }
   };
+  const deleteTodos = (todoId) => {
+    axios
+      .delete(`${process.env.REACT_APP_API_URL}/thingsTodo/${todoId}`)
+      .then(() => fetchTodos());
+  };
   
   useEffect(() => {
     fetchTodos();
@@ -69,7 +74,10 @@ function TripDetails() {
       <Link to="/trips"> Back to trips</Link>
 
       {todos.map((todo) => (
+        <>
+        <button onClick = {() => deleteTodos(todo._id)}> delete </button>
         <p>{todo.todo}</p>
+        </>
       ))}
     </div>
   );

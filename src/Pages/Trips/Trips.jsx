@@ -26,17 +26,19 @@ useEffect(() => {
 
 
   return (
-    <div>
+    <div >
 
 <h2> Trips </h2>
      <AddForm refreshtrips={fetchTrips} />
      {trips.map((trip) => {
         return (
-          <div key={trip._id}>
-            <Link to={`/trips/${trip._id}`}>
-              <h3>{trip.place}</h3>
-              <h1>{trip.name}</h1>
-            </Link>
+          < div className='trip-container' key={trip._id}>
+            <Link className='trip-name-link' to={`/trips/${trip._id}`}>
+            <h3>{trip.name}</h3></Link>
+              
+              <p>{trip.place}</p>
+              
+           
           </div>
         );
       })}
