@@ -29,7 +29,7 @@ useEffect(() => {
     <div>
 
 <h2> Trips </h2>
-     <AddForm refreshProjects={fetchTrips} />
+     <AddForm refreshtrips={fetchTrips} />
      {trips.map((trip) => {
         return (
           <div key={trip._id}>

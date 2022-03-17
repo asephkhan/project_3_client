@@ -21,7 +21,7 @@ function AddForm(props) {
         setName('');
         setPlace('');
         setDays('');
-        props.refreshTrips(); 
+        props.refreshtrips(); 
       })
       .catch((err) => console.log(err));
       
@@ -33,13 +33,13 @@ function AddForm(props) {
 <form onSubmit={handleSubmit}>
 
  <label htmlFor="name">Name</label>
- <input type="text" onChange={(e) => setName(e.target.value)} />
+ <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
 
  <label htmlFor="place">Place</label>
- <input type="text" onChange={(e) => setPlace(e.target.value)} />
+ <input type="text" value={place} onChange={(e) => setPlace(e.target.value)} />
 
  <label htmlFor="days">Days</label>
- <input type="text" onChange={(e) => setDays(e.target.value)} />
+ <input type="number" value={days} onChange={(e) => setDays(e.target.value)} />
 
  
  

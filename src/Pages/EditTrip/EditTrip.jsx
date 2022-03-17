@@ -7,6 +7,7 @@ function EditTrip() {
   const [place, setPlace] = useState('');
   const [days, setDays] = useState('');
 
+  const storedToken = localStorage.getItem('authToken')
 
   const { tripId } = useParams();
 
@@ -14,13 +15,17 @@ function EditTrip() {
 
   const deleteTrip = () => {
     axios
-      .delete(`${process.env.REACT_APP_API_URL}/trips/${tripId}`)
+      .delete(`${process.env.REACT_APP_API_URL}/trips/${tripId}`, {
+        headers: { Authorization: `Bearer ${storedToken}` }
+      })
       .then(() => navigate('/trips'));
   };
 
-  const fetchProject = async () => {
+  const fetchTrips = async () => {
     try {
-      let response = await axios.get(`${process.env.REACT_APP_API_URL}/trips/${tripId}`);
+      let response = await axios.get(`${process.env.REACT_APP_API_URL}/trips/${tripId}`, {
+        headers: { Authorization: `Bearer ${storedToken}` }
+      });
       let { name, place, days } = response.data;
       setName(name);
       setPlace(place);
@@ -31,7 +36,7 @@ function EditTrip() {
   };
 
   useEffect(() => {
-    fetchProject();
+    fetchTrips();
   }, []);
 
   const handleSubmit = (e) => {
@@ -40,7 +45,10 @@ function EditTrip() {
     const body = { name, place, days };
 
     axios
-      .put(`${process.env.REACT_APP_API_URL}/trips/${tripId}`, body)
+      .put(`${process.env.REACT_APP_API_URL}/trips/${tripId}`, body, {
+        headers: { Authorization: `Bearer ${storedToken}` }
+      }
+      )
       .then((response) => {
         setName('');
         setPlace('');
@@ -64,7 +72,7 @@ function EditTrip() {
 <input type="text" name="place" value={place} onChange={(e) => setPlace(e.target.value)} />
 
 <label htmlFor="days">Days</label>
-<input type="text" name="days" value={days} onChange={(e) => setDays(e.target.value)} />
+<input type="number" name="days" value={days} onChange={(e) => setDays(e.target.value)} />
 
 
 <button type="submit">Edit Project</button>
