@@ -32,8 +32,8 @@ const [urlapi, setUrlapi] = useState([]);
      <h1> Welcome to travel diary </h1>
      {
        urlapi && (
-         <div>
-         <h2>{urlapi.text} </h2>
+         <div className='home-container-quotes'>
+         <h2> {urlapi.text} </h2>
          <h3> {urlapi.author} </h3>
          
          </div>

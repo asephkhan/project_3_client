@@ -27,27 +27,24 @@ function AddForm(props) {
       
     }
   return (
-    <div>
-<h3>Add a trip </h3>
+<div>
 <form onSubmit={handleSubmit}>
+<h3>Add a trip </h3>
 
  <label htmlFor="name">Name</label>
- <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
+ <input type="text" value={name} onChange={(e) => setName(e.target.value)} required />
 
  <label htmlFor="place">Place</label>
- <input type="text" value={place} onChange={(e) => setPlace(e.target.value)} />
+ <input type="text" value={place} onChange={(e) => setPlace(e.target.value)} required />
 
  <label htmlFor="days">Days</label>
- <input type="number" value={days} onChange={(e) => setDays(e.target.value)} />
+ <input type="number" value={days} onChange={(e) => setDays(e.target.value)} required />
 
  
  
 <button type="submit">Add Trip</button>
 </form>
-    
-    
-    
-    </div>
+</div>
   )
   
   }

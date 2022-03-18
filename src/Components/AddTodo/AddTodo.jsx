@@ -29,18 +29,29 @@ const handleSubmit = (e) => {
 }
 
   return (
-    <div>
-        <h2> add todo </h2>
-
+     <div className="todo-form">
+        <h2> Trip Details </h2>
         <form onSubmit={handleSubmit}>
-
-            <label htmlFor="todo">todo</label>
-            <input type="text" value={todo} onChange={(e) => setTodo(e.target.value)} />
-
+          <label htmlFor="todo">Add To Do!</label>
+            <input type="text" value={todo} onChange={(e) => setTodo(e.target.value)} required/>
             <button type="submit">Add todo </button>
         </form>
-    </div>
+    </div> 
+/*  <div class="wrapper">
+<header>Todo List</header>
+<form onSubmit={handleSubmit}>
+<div class="inputField">
+  <input type="text" placeholder="Enter new task" value={todo} onChange={(e) => setTodo(e.target.value)} required />
+  <button type="submit" >add</button>
+</div> *
+
+<div class="footer">
+ 
+</div>
+</form>
+</div> */
   )
 }
 
 export default AddTodo;
+

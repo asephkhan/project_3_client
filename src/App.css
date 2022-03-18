@@ -37,16 +37,28 @@
   }
 }
 
+a{
+  text-decoration: none;
+  color: black;
+  
+}
+
+/*home page start */
+
+body{
+  background-color: lightblue;
+}
+
 .home-container{
   height: 90vh;
-  display: flex;
-  justify-content: center;
+  /* display: flex;
+  justify-content: center; */
   align-items: center;
   color: rgb(14, 98, 138);
   background-color: lightblue;
-  color: white;
-background-size: cover;
-background-repeat: no-repeat;
+  color: rgb(49, 41, 41);
+  background-size: cover;
+  background-repeat: no-repeat;
 
 }
 
@@ -54,15 +66,199 @@ background-repeat: no-repeat;
   font-size: 70px;
 }
 
-form{
+.home-container-quotes{
+  display: flex;
+}
+
+/* Trip details start*/
+ .todo-form{
   display: flex;
   flex-direction: column;
   width: 30vw;
+  margin: 2;
+  border: solid 3px #0a788b;
+  padding: 30px;
+  margin: 5rem;
+}
+  
+ .trip-details{
+  color: white;
+  border: solid 3px #ffff;
+  width: 100vw;
+  
+  font-size: 20px;
+  background-color: #0a788b;
+  border-radius: 15px;
+} 
+
+ .details-page{
+  display: flex;
+} 
+
+ .detail-container{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+} 
+ 
+.detail-box{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  min-width: 20rem;
+  min-height: 10rem;
+  max-width: 20rem;
+  max-height: 10rem;
+  border: solid black 1px;
+  margin: 2rem;
+  background-color: white;
+  color: black;
+} 
+
+.trip-details-links{
+text-decoration: none;
+color:#ffff
+}
+
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+:root {
+  --main-blue: #1572A1;
+  --main-green: #68EACC;
+  --main-grey: #f2f2f2;
+  --main-red: #e74c3c;
+  --main-white: #fff;
+  --sub-blue: #86C6F4;
+  --sub-grey: #ccc;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+ body {
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(to bottom, var(--main-green), var(--sub-blue)); 
+ 
+    } 
+
+ button {
+  height: 100%;
+  border: none;
+  border-radius: 3px;
+  outline: none;
+    background: rgb(90, 31, 8);  
+   color: white; 
+  cursor: pointer;
+} 
+
+.wrapper {
+  margin: 120px auto;
+  max-width: 400px;
+  width: 100%;
+  border-radius: 5px;
+  background: var(--main-white);
+  padding: 25px;
+}
+
+.wrapper header {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.wrapper .inputField {
+  display: flex;
+  height: 45px;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.inputField input {
+  width: 85%;
+  height: 100%;
+  border: 1px solid var(--sub-grey);
+  font-size: 17px;
+  border-radius: 3px;
+  padding-left: 15px;
+}
+
+ .inputField button {
+  width: 60px;
+  margin-left: 10px;
+  font-size: 22px;
+} 
+
+.wrapper .todoList {
+  max-height: 250px;
+  overflow-y: scroll;
+}
+
+.todoList::-webkit-scrollbar {
+    width: 0;
+  }
+.todoList li {
+  list-style: none;
+  height: 45px;
+  line-height: 45px;
+  position: relative;
+  background: var(--main-grey);
+  margin-bottom: 8px;
+  border-radius: 3px;
+  padding-left: 15px;
+  cursor: default;
+  overflow: hidden;
+  width: 50%;
+  margin-left: 250px;
+}
+
+
+.todoList li span {
+  position: absolute;
+  right: -45px;
+  width: 45px;
+  color: var(--main-white);
+  text-align: center;
+  background: var(--main-red);
+  border-radius: 0 3px 3px 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.todoList li:hover span {
+  right: 0;
+}
+
+.wrapper .footer {
+   width: 100%; 
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  align-items: center;
+}
+
+ .footer button {
+  font-size: 16px;
+  padding: 6px 10px;
+} 
+ */
+
+
+/* Trip details end*/
+ 
+ form{
+  display: flex;
+  flex-direction: column;
+  width: 25vw;
   margin: 0 auto;
   border: solid 3px #0a788b;
   padding: 30px;
+  margin: 5rem;
 
-}
+}  
 
 form input{
   margin-bottom: 10px;
@@ -73,16 +269,19 @@ form label{
   margin-bottom: 5px;
 }
 
-form button{
+
+ form button{
   background-color: #0a788b;
   color: white;
   margin-top: 10px;
-}
-
+} 
+ 
 
 .trip-container{
+  
   border: solid 3px #ffff;
-  width: 25vw;
+  width: 10rem;
+  height: 10rem;
   font-size: 20px;
   background-color: #0a788b;
   border-radius: 15px;
@@ -93,7 +292,24 @@ form button{
   color: #ffff;
 }
 
+.trip-container2{
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .trip-name-link{
   text-decoration: none;
   color:#ffff
+}
+
+.page{
+  display: flex;
+  justify-content: space-around;
+
+}
+
+.trip-title{
+  display: flex;
+  justify-content: center;
+  size: 400px;
 }

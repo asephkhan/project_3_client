@@ -56,29 +56,43 @@ function TripDetails() {
 
 
   return (
-    <div>
+    <div className="details-page">
+    
+
+      <div className="trip-details">
+      <div>
       <AddTodo refreshtodos={fetchTodos} />
-      
+      </div>
+      {/*   {trip && (
+          <>
+           
+            <p>{trip.name}</p>
+          
+          </>
+        )} */}
 
-      <h3>TripDetails</h3>
-      {trip && (
-        <>
-          <h1>{trip.place}</h1>
-           <p>{trip.name}</p>
-          <p>{trip.days}</p> 
-        </>
-      )}
-   
+        
 
-      {trip && <Link to={`/trips/edit/${trip._id}`}>Edit Trip</Link>} 
-      <Link to="/trips"> Back to trips</Link>
-
-      {todos.map((todo) => (
-        <>
-        <button onClick = {() => deleteTodos(todo._id)}> delete </button>
-        <p>{todo.todo}</p>
-        </>
-      ))}
+        <div className="detail-container">
+        {todos.map((todo) => (
+          <>
+          <div className="detail-box">
+          
+          <ul >
+          <li>{todo.todo}<button onClick = {() => deleteTodos(todo._id)}> </button> </li>
+  
+          </ul>
+          </div>
+          </>
+          ))}
+        </div> 
+        <div >  
+        {trip && <Link className="trip-details-links" to={`/trips/edit/${trip._id}`}>Edit Trip</Link>} 
+        </div>
+        <div>
+        <Link className="trip-details-links" to="/trips"> Back to trips</Link>
+        </div>
+      </div>
     </div>
   );
 }
