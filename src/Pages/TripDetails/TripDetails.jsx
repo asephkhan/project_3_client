@@ -79,7 +79,7 @@ function TripDetails() {
           <div className="detail-box">
           
           <ul >
-          <li>{todo.todo}<button onClick = {() => deleteTodos(todo._id)}> </button> </li>
+          <li>{todo.todo}<button onClick = {() => deleteTodos(todo._id)}>delete</button> </li>
   
           </ul>
           </div>

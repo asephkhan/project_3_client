@@ -4,7 +4,7 @@
    position: relative;
     width: 100vw;
   height: 10vh;
-  background: #0a788b ;
+  background: #e7e08b ;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -14,19 +14,19 @@
 
 .NavbarLinks{
     text-decoration: none;
-    color: #ffff;
+    color: rgb(24, 22, 22);
     padding: 15px;
 
 
 }
 
 .NavbarLinks:hover{
-color: white;
+color: rgb(26, 23, 23);
 text-decoration: underline;
 }
 
 button{
-    background-color: white;
+    background-color: rgb(221, 208, 31);
     border: none;
    padding: 5px 15px;
 }
@@ -43,7 +43,7 @@ button{
     font-size: 18px;
     margin-right: 20px;
     margin-bottom: 0;
-}
+} 
 
 
 
