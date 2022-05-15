@@ -5,21 +5,22 @@ import AddTodo from "../../Components/AddTodo/AddTodo";
 
 function TripDetails() {
   const [trip, setTrip] = useState(null);
-  const [todos, setTodos] = useState([])
-  const  { tripId } = useParams();
+  const [todos, setTodos] = useState([]);
+  const { tripId } = useParams();
 
-  const storedToken = localStorage.getItem('authToken')
+  const storedToken = localStorage.getItem("authToken");
 
   const fetchTrip = async () => {
     try {
-      console.log(tripId)
+      console.log(tripId);
       let response = await axios.get(
-        `${process.env.REACT_APP_API_URL}/trips/${tripId}`, {
-          headers: { Authorization: `Bearer ${storedToken}` }
+        `${process.env.REACT_APP_API_URL}/trips/${tripId}`,
+        {
+          headers: { Authorization: `Bearer ${storedToken}` },
         }
       );
       setTrip(response.data);
-      console.log(response.data)
+      console.log(response.data);
     } catch (error) {
       console.log(error);
     }
@@ -29,13 +30,14 @@ function TripDetails() {
     fetchTrip();
   }, [tripId]);
 
-  // fetching todos. 
+  // fetching todos.
 
   const fetchTodos = async () => {
     try {
       let response = await axios.get(
-        `${process.env.REACT_APP_API_URL}/trips/${tripId}`, {
-          headers: { Authorization: `Bearer ${storedToken}` }
+        `${process.env.REACT_APP_API_URL}/trips/${tripId}`,
+        {
+          headers: { Authorization: `Bearer ${storedToken}` },
         }
       );
       setTodos(response.data.thingsToDo);
@@ -49,48 +51,46 @@ function TripDetails() {
       .delete(`${process.env.REACT_APP_API_URL}/thingsTodo/${todoId}`)
       .then(() => fetchTodos());
   };
-  
+
   useEffect(() => {
     fetchTodos();
   }, []);
 
-
   return (
     <div className="details-page">
-    
-
       <div className="trip-details">
-      <div>
-      <AddTodo refreshtodos={fetchTodos} />
-      </div>
-      {/*   {trip && (
-          <>
-           
-            <p>{trip.name}</p>
-          
-          </>
-        )} */}
-
-        
+        <div>
+          <AddTodo refreshtodos={fetchTodos} />
+        </div>
 
         <div className="detail-container">
-        {todos.map((todo) => (
-          <>
-          <div className="detail-box">
-          
-          <ul >
-          <li>{todo.todo}<button onClick = {() => deleteTodos(todo._id)}>delete</button> </li>
-  
-          </ul>
-          </div>
-          </>
+          {todos.map((todo) => (
+            <>
+              <div className="detail-box">
+                <ul>
+                  <li>
+                    {todo.todo}
+                    <button onClick={() => deleteTodos(todo._id)}>
+                      delete
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </>
           ))}
-        </div> 
-        <div >  
-        {trip && <Link className="trip-details-links" to={`/trips/edit/${trip._id}`}>Edit Trip</Link>} 
         </div>
         <div>
-        <Link className="trip-details-links" to="/trips"> Back to trips</Link>
+          {trip && (
+            <Link className="trip-details-links" to={`/trips/edit/${trip._id}`}>
+              Edit Trip
+            </Link>
+          )}
+        </div>
+        <div>
+          <Link className="trip-details-links" to="/trips">
+            {" "}
+            Back to trips
+          </Link>
         </div>
       </div>
     </div>
