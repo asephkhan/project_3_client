@@ -38,8 +38,9 @@ function AddTodo(props) {
           placeholder="add todo"
           required
         /> 
+          <button className="  text-slate-200 bg-blue-600 px-10 font-extrabold" type="submit">+</button>
       </form>
-      <button className="  text-slate-200 bg-blue-600 px-10 font-extrabold" type="submit">+</button>
+    
     </div>
   );
 }
