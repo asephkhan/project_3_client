@@ -10,15 +10,12 @@ import EditTrip from "./Pages/EditTrip/EditTrip";
 import Trips from "./Pages/Trips/Trips";
 import TripDetails from "./Pages/TripDetails/TripDetails";
 
-
 function App() {
   return (
-    <div className="App">
+    <div className=" bg-blue-200 min-h-screen p-4">
       <Navbar />
 
       <Routes>
-
-      
         <Route path="/" element={<Home />} />
 
         <Route
