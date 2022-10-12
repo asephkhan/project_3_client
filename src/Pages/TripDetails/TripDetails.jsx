@@ -57,40 +57,22 @@ function TripDetails() {
   }, []);
 
   return (
-    <div>
+    <div className="py-3">
+      <div >
+        {todos.map((todo) => (
+          <div className=" mx-4 ">
+            <p className=" bg-blue-300 flex justify-between mb-2">
+              <li>{todo.todo}</li>
+              <button className=" text-slate-200 bg-red-800 px-4" onClick={() => deleteTodos(todo._id)}>delete</button>
+            </p>
+          </div>
+        ))}
+      </div>
       <div>
-        <div>
-          {todos.map((todo) => (
-            <>
-              <div>
-                <ul>
-                  <li>
-                    {todo.todo}
-                    <button onClick={() => deleteTodos(todo._id)}>
-                      delete
-                    </button>
-                  </li>
-                </ul>
-              </div>
-            </>
-          ))}
-        </div>
-        <div>
-          <AddTodo refreshtodos={fetchTodos} />
-        </div>
-        {/*  <div>
-          {trip && (
-            <Link className="trip-details-links" to={`/trips/edit/${trip._id}`}>
-              Edit Trip
-            </Link>
-          )}
-        </div> */}
-        <div>
-          <Link  to="/trips">
-            
-            Back to trips
-          </Link>
-        </div>
+        <AddTodo refreshtodos={fetchTodos} />
+      </div>
+      <div>
+        <Link to="/trips">Back to trips</Link>
       </div>
     </div>
   );

@@ -29,26 +29,30 @@ function Trips() {
           <AddForm refreshtrips={fetchTrips} />
         </div>
 
-        <div>
+        <div className="py-4">
           {trips.map((trip) => {
             return (
               <>
                 <div key={trip._id}>
-                  <Link to={`/trips/${trip._id}`}>
-                    <h3>{trip.name}</h3>
-                  </Link>
-                  <div>
+                  <div className=" bg-blue-300  ">
+                    <Link
+                      className=" no-underline text-blue-900 font-semibold gap-0"
+                      to={`/trips/${trip._id}`}
+                    >
+                      <p>Trip Name: <span>{trip.name}</span></p>
+                      <p>Location: {trip.place}</p>
+                      <p>Number of days: {trip.days}</p>
+                      
+                    </Link>
+                  </div>
+
+                  <div className="bg-blue-600 text-center ">
                     {trip && (
-                      <button>
-                        <Link to={`/trips/edit/${trip._id}`}>Edit Trip</Link>
+                      <button  >
+                        <Link className=" no-underline text-slate-200 "  to={`/trips/edit/${trip._id}`}>Edit Trip</Link>
                       </button>
                     )}
-                  
-                      {/* <button> Delete Trip</button> */}
-                  
                   </div>
-                  {/* <p>{trip.place}</p>
-                  <p>{trip.days} days</p> */}
                 </div>
               </>
             );

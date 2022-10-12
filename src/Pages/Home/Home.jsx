@@ -28,16 +28,16 @@ function Home() {
   }, []);
 
   return (
-    <div className=" text-center flex flex-col gap-y-20">
-      <h1 className=" py-4"> Welcome to the PLANNER </h1>
+    <div className=" text-center flex flex-col gap-y-16 ">
+      <h1 className=" py-4 text-4xl text-blue-900"> Welcome to <b className=" font-extrabold">TRAVEL PLANNER</b> </h1>
 
       {/* when the user is not logged in. */}
       {!loggedIn && (
         <div className="flex flex-col px-12 ">
         <p>Already has an account please </p>
-        <Link className="no-underline bg-blue-400 py-3 mb-3 text-white text-lg" to="/login">Login</Link>
+        <Link className="no-underline bg-blue-600 py-3 mb-3 text-white text-lg" to="/login">Login</Link>
         <p className="p-2">Don't have an account please </p>
-        <Link className="no-underline bg-blue-400 py-3 text-white text-lg" to="/signup">Register</Link>
+        <Link className="no-underline bg-blue-600 py-3 text-white text-lg" to="/signup">Register</Link>
           
         </div>
       )}
@@ -45,14 +45,14 @@ function Home() {
       {/*  when the user is logged in. */}
       {loggedIn && (
         <>
-          <Link className="py-10 text-3xl no-underline text-black border bg-blue-400 flex justify-center align-middle" to="/trips">My planned trips</Link>
+          <Link className="py-10 text-3xl no-underline text-slate-200 border bg-blue-600 flex justify-center align-middle" to="/trips">My planned trips</Link>
         </>
       )}
 
       {urlapi && (
-        <div className='text-lg mt-20'>
+        <div className='text-lg '>
           <p> "{urlapi.text}" </p>
-          <p> Author: {urlapi.author} </p>
+          <p className=" underline"> <i className=" font-extralight">{urlapi.author}</i> </p>
         </div>
       )}
     </div>

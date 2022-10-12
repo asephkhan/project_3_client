@@ -27,18 +27,19 @@ function AddTodo(props) {
   };
 
   return (
-    <div className="todo-form">
-      <form onSubmit={handleSubmit}>
+    <div className="flex justify-center gap-2" >
+      <form  onSubmit={handleSubmit}>
         {/* <label htmlFor="todo">Add To Do!</label> */}
-        <button type="submit">+</button>
-        <input
+        
+        <input 
           type="text"
           value={todo}
           onChange={(e) => setTodo(e.target.value)}
           placeholder="add todo"
           required
-        />
+        /> 
       </form>
+      <button className="  text-slate-200 bg-blue-600 px-10 font-extrabold" type="submit">+</button>
     </div>
   );
 }
