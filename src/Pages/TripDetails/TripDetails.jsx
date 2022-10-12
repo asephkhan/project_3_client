@@ -9,7 +9,7 @@ function TripDetails() {
   const { tripId } = useParams();
 
   const storedToken = localStorage.getItem("authToken");
-
+  // fetching trips.
   const fetchTrip = async () => {
     try {
       console.log(tripId);
@@ -57,16 +57,12 @@ function TripDetails() {
   }, []);
 
   return (
-    <div className="details-page">
-      <div className="trip-details">
+    <div>
+      <div>
         <div>
-          <AddTodo refreshtodos={fetchTodos} />
-        </div>
-
-        <div className="detail-container">
           {todos.map((todo) => (
             <>
-              <div className="detail-box">
+              <div>
                 <ul>
                   <li>
                     {todo.todo}
@@ -80,15 +76,18 @@ function TripDetails() {
           ))}
         </div>
         <div>
+          <AddTodo refreshtodos={fetchTodos} />
+        </div>
+        {/*  <div>
           {trip && (
             <Link className="trip-details-links" to={`/trips/edit/${trip._id}`}>
               Edit Trip
             </Link>
           )}
-        </div>
+        </div> */}
         <div>
-          <Link className="trip-details-links" to="/trips">
-            {" "}
+          <Link  to="/trips">
+            
             Back to trips
           </Link>
         </div>

@@ -1,4 +1,3 @@
-import "./App.css";
 import React from "react";
 import Home from "./Pages/Home/Home";
 import LoginPage from "./Pages/LoginPage/LoginPage";
@@ -11,44 +10,57 @@ import EditTrip from "./Pages/EditTrip/EditTrip";
 import Trips from "./Pages/Trips/Trips";
 import TripDetails from "./Pages/TripDetails/TripDetails";
 
+
 function App() {
-  return <div className="App">
-  <Navbar />
+  return (
+    <div className="App">
+      <Navbar />
 
-<Routes>
-<Route path="/" element={<Home />} />
+      <Routes>
 
+      
+        <Route path="/" element={<Home />} />
 
-<Route path="/trips" element={
+        <Route
+          path="/trips"
+          element={
             <IsPrivate>
-              <Trips/>
-            </IsPrivate>
-          }/> 
-
-<Route path="/trips/:tripId" element={
-            <IsPrivate>
-              <TripDetails/>
+              <Trips />
             </IsPrivate>
           }
-        /> 
+        />
 
-<Route path="/trips/edit/:tripId" element={<EditTrip />} /> 
+        <Route
+          path="/trips/:tripId"
+          element={
+            <IsPrivate>
+              <TripDetails />
+            </IsPrivate>
+          }
+        />
 
+        <Route path="/trips/edit/:tripId" element={<EditTrip />} />
 
-<Route path="/signup"element={
+        <Route
+          path="/signup"
+          element={
             <IsAnon>
               <SignupPage />
             </IsAnon>
-          } />
-        
-        <Route path="/login" element={
-           <IsAnon>
-            <LoginPage /> 
-           </IsAnon> } />
+          }
+        />
 
-</Routes>
-
-  </div>;
+        <Route
+          path="/login"
+          element={
+            <IsAnon>
+              <LoginPage />
+            </IsAnon>
+          }
+        />
+      </Routes>
+    </div>
+  );
 }
 
 export default App;

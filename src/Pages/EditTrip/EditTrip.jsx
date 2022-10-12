@@ -75,7 +75,7 @@ function EditTrip() {
 <input type="number" name="days" value={days} onChange={(e) => setDays(e.target.value)} />
 
 
-<button type="submit">Edit Project</button>
+<button type="submit">Edit Trip</button>
       </form>
 
       <button onClick={deleteTrip}> Delete Trip</button>
